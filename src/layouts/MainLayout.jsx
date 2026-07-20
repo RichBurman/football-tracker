@@ -1,9 +1,9 @@
-import Navbar from "../components/Navbar";
+import NavBar from "../components/NavBar";
 
 function MainLayout({ children }) {
   return (
     <>
-      <Navbar />
+      <NavBar />
       <main>{children}</main>
     </>
   );
