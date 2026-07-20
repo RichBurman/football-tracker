@@ -1,5 +1,5 @@
 import players from "../data/players";
-import PlayerCard from "../components/PlayerCard";
+import PlayerCard from "../components/PlayerCard/PlayerCard";
 
 function Players() {
   return (
