@@ -1,8 +1,8 @@
 function ManchesterUnited(){
     return (
-        <div>
-            <h1>Manchester United</h1>
-        </div>
+        <section className="page-container">
+            <h1 className="page-title">Manchester United</h1>
+        </section>
     )
 }
 

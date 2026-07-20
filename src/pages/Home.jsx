@@ -1,9 +1,9 @@
 function Home() {
-    return (
-        <div>
-            <h1>Premier Tracker Dashboard</h1>
-        </div>
-    )
+  return (
+    <section className="page-container">
+      <h1 className="page-title">Home</h1>
+    </section>
+  );
 }
 
 export default Home;

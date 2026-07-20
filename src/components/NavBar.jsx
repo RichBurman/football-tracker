@@ -8,7 +8,6 @@ function NavBar() {
             <Link to="/manchester-united">Manchester United</Link>
             <Link to="/fixtures">Fixtures</Link>
             <Link to="/players">Players</Link>
-            <Link to="/not-found">Not Found</Link>
         </nav>
     )
 }

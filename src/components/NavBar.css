@@ -1,13 +1,18 @@
 nav {
-
-display:flex;
-gap:20px;
-padding:20px;
-
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  background-color: #111;
 }
 
-a {
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
 
-text-decoration:none;
-
+nav a:hover {
+  color: #da291c;
 }

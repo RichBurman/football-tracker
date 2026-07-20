@@ -1,17 +1,9 @@
-function Fixtures(){
-
-    return (
-
-        <div>
-
-            <h1>
-                Fixtures
-            </h1>
-
-        </div>
-
-    )
-
+function Fixtures() {
+  return (
+    <section className="page-container">
+      <h1 className="page-title">Fixtures</h1>
+    </section>
+  );
 }
 
-export default Fixtures
+export default Fixtures;
