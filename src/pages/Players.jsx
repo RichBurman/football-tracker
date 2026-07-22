@@ -5,10 +5,18 @@ import "../styles/Players.css";
 
 function Players() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedPosition, setSelectedPosition] = useState("All");
 
-  const filteredPlayers = players.filter((player) =>
-    player.name.toLowerCase().includes(searchTerm.toLowerCase()),
-  );
+  const filteredPlayers = players.filter((player) => {
+    const matchesSearch = player.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+
+    const matchesPosition =
+      selectedPosition === "All" || player.position === selectedPosition;
+
+    return matchesSearch && matchesPosition;
+  });
   return (
     <section className="page-container">
       <h1 className="page-title">Manchester United Squad</h1>
@@ -21,6 +29,28 @@ function Players() {
           onChange={(event) => setSearchTerm(event.target.value)}
         />
       </div>
+
+      <div className="filter-buttons">
+        <button onClick={() => setSelectedPosition("All")}>All</button>
+
+        <button onClick={() => setSelectedPosition("Goalkeeper")}>
+          Goalkeeper
+        </button>
+
+        <button onClick={() => setSelectedPosition("Defender")}>
+          Defender
+        </button>
+
+        <button onClick={() => setSelectedPosition("Midfielder")}>
+          Midfielder
+        </button>
+
+        <button onClick={() => setSelectedPosition("Forward")}>Forward</button>
+      </div>
+
+      {filteredPlayers.length === 0 && (
+        <p className="no-results">No players found.</p>
+      )}
 
       <div className="players-grid">
         {filteredPlayers.map((player) => (
