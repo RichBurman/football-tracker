@@ -1,7 +1,7 @@
 import { useState } from "react";
 import players from "../data/players";
 import PlayerCard from "../components/PlayerCard/PlayerCard";
-import "../styles/Players.css";
+import "../styles/players.css";
 
 function Players() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -31,21 +31,39 @@ function Players() {
       </div>
 
       <div className="filter-buttons">
-        <button onClick={() => setSelectedPosition("All")}>All</button>
-
-        <button onClick={() => setSelectedPosition("Goalkeeper")}>
+        <button
+          className={selectedPosition === "All" ? "active-filter" : ""}
+          onClick={() => setSelectedPosition("All")}
+        >
+          All
+        </button>
+        <button
+          className={selectedPosition === "Goalkeeper" ? "active-filter" : ""}
+          onClick={() => setSelectedPosition("Goalkeeper")}
+        >
           Goalkeeper
         </button>
 
-        <button onClick={() => setSelectedPosition("Defender")}>
+        <button
+          className={selectedPosition === "Defender" ? "active-filter" : ""}
+          onClick={() => setSelectedPosition("Defender")}
+        >
           Defender
         </button>
 
-        <button onClick={() => setSelectedPosition("Midfielder")}>
+        <button
+          className={selectedPosition === "Midfielder" ? "active-filter" : ""}
+          onClick={() => setSelectedPosition("Midfielder")}
+        >
           Midfielder
         </button>
 
-        <button onClick={() => setSelectedPosition("Forward")}>Forward</button>
+        <button
+          className={selectedPosition === "Forward" ? "active-filter" : ""}
+          onClick={() => setSelectedPosition("Forward")}
+        >
+          Forward
+        </button>
       </div>
 
       {filteredPlayers.length === 0 && (
