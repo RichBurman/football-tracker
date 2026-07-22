@@ -2,10 +2,13 @@ import { useState } from "react";
 import players from "../data/players";
 import PlayerCard from "../components/PlayerCard/PlayerCard";
 import "../styles/players.css";
+import FilterButton from "../components/FilterButton/FilterButton";
 
 function Players() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedPosition, setSelectedPosition] = useState("All");
+
+  const positions = ["All", "Goalkeeper", "Defender", "Midfielder", "Forward"];
 
   const filteredPlayers = players.filter((player) => {
     const matchesSearch = player.name
@@ -28,6 +31,9 @@ function Players() {
           value={searchTerm}
           onChange={(event) => setSearchTerm(event.target.value)}
         />
+        {searchTerm && (
+          <button onClick={() => setSearchTerm("")}>Clear</button>
+        )}{" "}
       </div>
 
       <p className="player-count">
@@ -35,39 +41,14 @@ function Players() {
       </p>
 
       <div className="filter-buttons">
-        <button
-          className={selectedPosition === "All" ? "active-filter" : ""}
-          onClick={() => setSelectedPosition("All")}
-        >
-          All
-        </button>
-        <button
-          className={selectedPosition === "Goalkeeper" ? "active-filter" : ""}
-          onClick={() => setSelectedPosition("Goalkeeper")}
-        >
-          Goalkeeper
-        </button>
-
-        <button
-          className={selectedPosition === "Defender" ? "active-filter" : ""}
-          onClick={() => setSelectedPosition("Defender")}
-        >
-          Defender
-        </button>
-
-        <button
-          className={selectedPosition === "Midfielder" ? "active-filter" : ""}
-          onClick={() => setSelectedPosition("Midfielder")}
-        >
-          Midfielder
-        </button>
-
-        <button
-          className={selectedPosition === "Forward" ? "active-filter" : ""}
-          onClick={() => setSelectedPosition("Forward")}
-        >
-          Forward
-        </button>
+        {positions.map((position) => (
+          <FilterButton
+            key={position}
+            label={position}
+            selectedPosition={selectedPosition}
+            setSelectedPosition={setSelectedPosition}
+          />
+        ))}
       </div>
 
       {filteredPlayers.length === 0 && (
