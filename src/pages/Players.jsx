@@ -30,6 +30,10 @@ function Players() {
         />
       </div>
 
+      <p className="player-count">
+        Showing {filteredPlayers.length} of {players.length} players
+      </p>
+
       <div className="filter-buttons">
         <button
           className={selectedPosition === "All" ? "active-filter" : ""}

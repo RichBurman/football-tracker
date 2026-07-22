@@ -54,3 +54,9 @@
     color: red;
     border-color: #da291c;
 }
+
+.player-count {
+    text-align: center;
+    margin-top: 15px;
+    color: #555;
+}
