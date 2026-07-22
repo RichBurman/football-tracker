@@ -1,0 +1,49 @@
+.player-profile {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+.back-button {
+  display: inline-block;
+  margin-bottom: 25px;
+  padding: 10px 18px;
+  background: #da291c;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+
+.back-button:hover {
+  opacity: 0.85;
+}
+
+
+.player-info,
+.player-statistics {
+  margin-bottom: 40px;
+}
+
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+
+.stat-card {
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  background: #f5f5f5;
+}
+
+
+.stat-card h3 {
+  font-size: 2rem;
+  margin: 0;
+}
+
